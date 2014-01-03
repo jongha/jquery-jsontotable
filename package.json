@@ -1,6 +1,6 @@
 {
   "name": "jquery.jsontotable",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "engines": {
     "node": ">= 0.8.0"
   },

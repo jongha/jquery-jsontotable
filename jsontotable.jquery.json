@@ -2,7 +2,7 @@
     "name": "jsontotable",
     "title": "jQuery JSON to Table",
     "description": "",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "author": {
         "name": "Jong-Ha Ahn",
         "email": "jongha.ahn@mrlatte.net",
@@ -15,7 +15,7 @@
         "type": "MIT",
         "url": "https://github.com/jongha/jquery-jsontotable/blob/master/LICENSE"}
     ],
-    "keywords": ["json", "table", "html"],
+    "keywords": ["json", "table", "html", "converter"],
     "bugs": "https://github.com/jongha/jquery-jsontotable/issues",
     "homepage": "https://github.com/jongha/jquery-jsontotable",
     "docs": "https://github.com/jongha/jquery-jsontotable"
