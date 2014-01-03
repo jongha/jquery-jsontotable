@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>jQuery Table Of Contents Plugin.</title>
+	<link href="../libs/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	.jsontotable table, .jsontotable th, .jsontotable td {
+		border: 1px solid black;
+		margin: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="jsontotable-arr" class="jsontotable"></div>
+		<div id="jsontotable-obj" class="jsontotable"></div>
+		<div id="jsontotable-str" class="jsontotable"></div>
+	</div>
+    <script type="text/javascript" src="../libs/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../src/jquery.jsontotable.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var arr = [
+			[1, 2, 3],
+			[1, 2, 3]
+		];
+		$.jsontotable(arr, { id: "#jsontotable-arr", header: false });
+
+        var obj = [
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}
+		];
+		$.jsontotable(obj, { id: "#jsontotable-obj" });
+
+        var str = '[\
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
+			{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"} \
+		]';
+		$.jsontotable(str, {
+			id: "#jsontotable-str",
+			className: "table table-hover"
+		});
+    });
+    </script>
+</body>
+</html>

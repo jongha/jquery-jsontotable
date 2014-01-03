@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQUery Table Of Contents Test Suite</title>
+    <script src="../libs/js/jquery-1.10.2.min.js"></script>
+    <!-- Load local QUnit (grunt requires v1.0.0 or newer). -->
+    <link rel="stylesheet" href="../libs/css/qunit-1.12.0.css" media="screen">
+    <script src="../libs/js/qunit-1.12.0.js"></script>
+    <!-- Load local lib and tests. -->
+    <script src="../src/jquery.jsontotable.js"></script>
+    <script src="jquery.jsontotable_test.js"></script>
+    <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING YOUR PLUGIN HERE -->
+    <script>window._$ = jQuery.noConflict(true);</script>
+</head>
+<body>
+    <h1 id="qunit-header">jQUery Table Of Contents Test Suite</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">
+        <div id="test1"></div>
+        <div id="test2"></div>
+		<div id="test3"></div>
+    </div>
+</body>
+</html>
