@@ -28,15 +28,21 @@
 
 				row = $("<tr></tr>");
 				for(var key in rowData) {
-					if(typeof rowData[key] !== "function"){ /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
+					if(typeof rowData[key] !== "function") { /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
 						row.append("<" + rowTag + ">" + rowData[key] + "</" + rowTag + ">");
 					}
 				}
 
-				if(isHeader){ /* ADDED: IF/ELSE to eliminate repetitive TBODY tags for every row */
-					$(this).append($("<" + frameTag + "></" + frameTag + ">").append(row).append("<tbody></tbody>"));
-				}else{
-					$(this).find("tbody").append(row); //always append data rows to the first tbody tag
+				if(isHeader) { /* ADDED: IF/ELSE to eliminate repetitive TBODY tags for every row */
+					$(this).append($("<" + frameTag + "></" + frameTag + ">").append(row));
+
+				}else {
+					var tbody = $(this).find("tbody");
+					if(tbody.length === 0) {
+						tbody = $(this).append("<tbody></tbody>");
+					}
+
+					tbody.append(row); //always append data rows to the first tbody tag
 				}
 
 				return this;
