@@ -25,54 +25,11 @@
 					[1, 2, 3]
 			];
 
-			$("#jsontotable-arr").append($("<h1></h1>").html("Array To Table"));
-
-			$.jsontotable(arr, { id: "#jsontotable-arr", header: true });
-
-			$("#jsontotable-arr").append($("<h1></h1>").html("Array To Table (Without Header)"));
-
-			$.jsontotable(arr, { id: "#jsontotable-arr", header: false });
-
-
-			var obj = [
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"},
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}
-			];
-
 			$("#jsontotable-obj").append($("<h1></h1>").html("JSON To Table (Has Header)"));
 
 			$.jsontotable(obj, { id: "#jsontotable-obj" });
 
-			$("#jsontotable-obj").append($("<h1></h1>").html("JSON To Table (Without Header)"));
-
-			$.jsontotable(obj, { id: "#jsontotable-obj", header: false });
-
-			var str = '[\
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"}, \
-				{"Title1": "Hello", "Title2": "Fine", "Title3": "Thank you"} \
-			]';
-
-			$("#jsontotable-obj").append($("<h1></h1>").html("JSON (String Format) To Table"));
 			
-			$.jsontotable(str, {
-				id: "#jsontotable-str",
-				className: "table table-hover"
 			});
 		});
 		</script>
