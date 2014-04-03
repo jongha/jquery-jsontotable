@@ -31,8 +31,9 @@
 					row = '<tr';
 					
 					for(var i in rowData){
-						if(i === '_data') continue;
-						row += ' ' + i + '="' + rowData[i] + '"';
+						if(i !== '_data') {
+							row += ' ' + i + '="' + rowData[i] + '"';
+						};						
 					}
 					row += '></tr>';
 					rowData = rowData._data;
@@ -55,8 +56,9 @@
 							cell = "<" + rowTag;
 
 							for(var j in cellObj){
-								if(j === '_data') continue;
-								cell += ' ' + j + '="' + cellObj[j] + '"';
+								if(j !== '_data') {
+									cell += ' ' + j + '="' + cellObj[j] + '"';
+								};								
 							}
 							
 							cellObj = cellObj._data;
