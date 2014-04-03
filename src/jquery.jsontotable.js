@@ -26,10 +26,48 @@
 				var frameTag = (isHeader) ? "thead" : "tbody";
 				var rowTag = (isHeader) ? "th" : "td";
 
-				row = $("<tr></tr>");
+				/* if rowData is object, set the key and value as tr's properties */
+				if($.isPlainObject(rowData)){
+					row = '<tr';
+					
+					for(var i in rowData){
+						if(i === '_data') continue;
+						row += ' ' + i + '="' + rowData[i] + '"';
+					}
+					row += '></tr>';
+					rowData = rowData._data;
+
+				}else{
+					row = "<tr></tr>";
+				}
+
+				row = $(row);
+
 				for(var key in rowData) {
-					if(typeof rowData[key] !== "function") { /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
-						row.append("<" + rowTag + ">" + rowData[key] + "</" + rowTag + ">");
+					var cellObj = rowData[key];
+
+					if(typeof cellObj !== "function") { /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
+						
+						var cell = '';
+
+						/* if cellObj is object, set the key and value as cell's properties */
+						if($.isPlainObject(cellObj)){
+							cell = "<" + rowTag;
+
+							for(var j in cellObj){
+								if(j === '_data') continue;
+								cell += ' ' + j + '="' + cellObj[j] + '"';
+							}
+							
+							cellObj = cellObj._data;
+
+							cell += '>' + cellObj + "</" + rowTag + ">";
+
+						}else{
+							cell = "<" + rowTag + ">" + cellObj + "</" + rowTag + ">";
+						}
+
+						row.append(cell);
 					}
 				}
 
