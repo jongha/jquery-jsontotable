@@ -28,7 +28,7 @@
 				var rowi,key,cellObj,cell,j;
 
 				/* if rowData is object, set the key and value as tr's properties */
-				if ($.isPlainObject(rowData)) {
+				if ($.isPlainObject(rowData) && rowData._data) {
 					row = '<tr';
 
 					for (rowi in rowData) {
@@ -53,7 +53,7 @@
 						cell = '';
 
 						/* if cellObj is object, set the key and value as cell's properties */
-						if ($.isPlainObject(cellObj)) {
+						if ($.isPlainObject(cellObj) && cellObj._data) {
 							cell = "<" + rowTag;
 
 							for (j in cellObj) {
