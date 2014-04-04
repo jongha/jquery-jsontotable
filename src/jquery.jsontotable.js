@@ -1,71 +1,72 @@
-(function ($) {
+(function($) {
 	$.jsontotable = function(data, options) {
 		var settings = $.extend({
 			id: null, // target element id
 			header: true,
-			className: null,
+			className: null
 		}, options);
 
 		options = $.extend(settings, options);
 
 		var obj = data;
-		if(typeof obj === "string") {
+		if (typeof obj === "string") {
 			obj = $.parseJSON(obj);
 		}
 
-		if(options.id && obj.length) {
+		if (options.id && obj.length) {
 
 			var i, row;
 			var table = $("<table></table>");
 
-			if(options.className) {
+			if (options.className) {
 				table.addClass(options.className);
 			}
 
 			$.fn.appendTr = function(rowData, isHeader) {
-				var frameTag = (isHeader) ? "thead" : "tbody";
-				var rowTag = (isHeader) ? "th" : "td";
+				var frameTag = isHeader ? "thead" : "tbody";
+				var rowTag = isHeader ? "th" : "td";
+				var rowi,key,cellObj,cell,j;
 
 				/* if rowData is object, set the key and value as tr's properties */
-				if($.isPlainObject(rowData)){
+				if ($.isPlainObject(rowData)) {
 					row = '<tr';
-					
-					for(var i in rowData){
-						if(i !== '_data') {
-							row += ' ' + i + '="' + rowData[i] + '"';
-						};						
+
+					for (rowi in rowData) {
+						if (rowi !== '_data') {
+							row += ' ' + rowi + '="' + rowData[rowi] + '"';
+						}
 					}
 					row += '></tr>';
 					rowData = rowData._data;
 
-				}else{
+				} else {
 					row = "<tr></tr>";
 				}
 
 				row = $(row);
 
-				for(var key in rowData) {
-					var cellObj = rowData[key];
+				for (key in rowData) {
+					cellObj = rowData[key];
 
-					if(typeof cellObj !== "function") { /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
-						
-						var cell = '';
+					if (typeof cellObj !== "function") { /* ADDED: this wrapper to account for people bootstrapping the ECMA Array model otherwise functions get converted to strings and show up in the object list / output */
+
+						cell = '';
 
 						/* if cellObj is object, set the key and value as cell's properties */
-						if($.isPlainObject(cellObj)){
+						if ($.isPlainObject(cellObj)) {
 							cell = "<" + rowTag;
 
-							for(var j in cellObj){
-								if(j !== '_data') {
+							for (j in cellObj) {
+								if (j !== '_data') {
 									cell += ' ' + j + '="' + cellObj[j] + '"';
-								};								
+								}
 							}
-							
+
 							cellObj = cellObj._data;
 
 							cell += '>' + cellObj + "</" + rowTag + ">";
 
-						}else{
+						} else {
 							cell = "<" + rowTag + ">" + cellObj + "</" + rowTag + ">";
 						}
 
@@ -73,12 +74,12 @@
 					}
 				}
 
-				if(isHeader) { /* ADDED: IF/ELSE to eliminate repetitive TBODY tags for every row */
+				if (isHeader) { /* ADDED: IF/ELSE to eliminate repetitive TBODY tags for every row */
 					$(this).append($("<" + frameTag + "></" + frameTag + ">").append(row));
 
-				}else {
+				} else {
 					var tbody = $(this).find("tbody");
-					if(tbody.length === 0) {
+					if (tbody.length === 0) {
 						tbody = $(this).append("<tbody></tbody>");
 					}
 
@@ -88,7 +89,7 @@
 				return this;
 			};
 
-			if(options.header) {
+			if (options.header) {
 				table.appendTr(obj[0], true);
 			}
 
