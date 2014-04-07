@@ -2,7 +2,7 @@
     "name": "jsontotable",
     "title": "jQuery JSON to Table",
     "description": "This plugin can convert JSON data type to table for html. JSON, or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. In these reasons todays many applications use JSON data format for data transferring. And you need JSON to table converter for html display.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "author": {
         "name": "Jong-Ha Ahn",
         "email": "jongha.ahn@mrlatte.net",

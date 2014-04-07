@@ -153,4 +153,27 @@
 				equal(target.find("td").length, 3);
 				equal(target.text(), str.replace(/[\{\}\"\[\], abc:]/gi, ""));
 		});
+
+		test("Test4 for _data Attribute", function() {
+				var target = $("#test4");
+				var arr = [{id:'header', _data:['one', 'two', 'three']}, [1, 2, 3]];
+
+				target.empty();
+				$.jsontotable(arr, { id: "#test4", header: false });
+				equal(target.find("thead").length, 0);
+				equal(target.find("tbody").length, 1);
+				equal(target.find("th").length, 0);
+				equal(target.find("tr").length, 2);
+				equal(target.find("td").length, 6);
+				equal(target.text(), arr[0]._data.join("") + arr[1].join(""));
+
+				target.empty();
+				$.jsontotable(arr, { id: "#test4", header: true });
+				equal(target.find("thead").length, 1);
+				equal(target.find("tbody").length, 1);
+				equal(target.find("th").length, 3);
+				equal(target.find("tr").length, 2);
+				equal(target.find("td").length, 3);
+				equal(target.text(), arr[0]._data.join("") + arr[1].join(""));
+		});
 }(jQuery));
