@@ -5,11 +5,11 @@
 
 This plugin can convert JSON data type to table for html. JSON, or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. In these reasons todays many applications use JSON data format for data transferring. And you need JSON to table converter for html display. Let's fork and use this. Thanks.
 
-## `Screenshot`
+## Screenshot
 
 ![Screenshot](https://raw.github.com/jongha/jquery-jsontotable/master/demo/screenshot.png)
 
-## `Usage`
+## Usage
 
 This sample is how to use this plugin using an Array type. 'header' key is an option. Default value is 'true'. This option indicates whether a header of the table is showing or hiding.
 
@@ -55,6 +55,6 @@ If you want to use the bootstrap style you can add 'className' key as follows.
 $.jsontotable(data, { id: '#jsontotable', className: 'table table-hover' });
 ```
 
-## `License`
+## License
 
 jQuery-JSONtoTable is available under the terms of the [MIT License](https://github.com/jongha/jquery-jsontotable/blob/master/LICENSE).
