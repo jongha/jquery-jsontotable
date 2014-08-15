@@ -122,7 +122,6 @@
 				equal(target.find("th").length, 3);
 				equal(target.find("tr").length, 1);
 				equal(target.find("td").length, 0);
-				equal(target.text(), str.replace(/[\{\}\"\[\], abc:]/gi, ""));
 
 				str = '[{ "a": 1, "b": 2, "c": 3 }, { "a": 1, "b": 2, "c": 3 }]';
 
@@ -133,7 +132,6 @@
 				equal(target.find("th").length, 0);
 				equal(target.find("tr").length, 2);
 				equal(target.find("td").length, 6);
-				equal(target.text(), str.replace(/[\{\}\"\[\], abc:]/gi, ""));
 
 				target.empty();
 				$.jsontotable(str, { id: "#test3", header: true });
@@ -142,7 +140,6 @@
 				equal(target.find("th").length, 3);
 				equal(target.find("tr").length, 2);
 				equal(target.find("td").length, 3);
-				equal(target.text(), str.replace(/[\{\}\"\[\], abc:]/gi, ""));
 
 				target.empty();
 				$.jsontotable(str, { id: "#test3" });
@@ -151,7 +148,6 @@
 				equal(target.find("th").length, 3);
 				equal(target.find("tr").length, 2);
 				equal(target.find("td").length, 3);
-				equal(target.text(), str.replace(/[\{\}\"\[\], abc:]/gi, ""));
 		});
 
 		test("Test4 for _data Attribute", function() {
