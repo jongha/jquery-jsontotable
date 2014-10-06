@@ -124,7 +124,7 @@
         if (dictType && headerObj) {
           var bodyItem = {};
           for (key in headerObj) {
-            bodyItem[key] = (obj[i] && obj[i][key]) ? obj[i][key] : "";
+            bodyItem[key] = (obj[i] && obj[i][key] != null) ? obj[i][key] : "";
           }
           
           table.appendTr(bodyItem, false);
